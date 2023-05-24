@@ -4,15 +4,23 @@
  */
 
 .heroBanner {
-  padding: 10rem 0;
+  padding: 20rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   background-image: url("@site/static/img/background.png");
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 4px 2px 1px rgba(0, 0, 0, 1);
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 996px) {
@@ -25,4 +33,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }

@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
+import '@site/static/fonts/Brda/index.css'
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -15,13 +16,22 @@ function HomepageHeader() {
         <h1 className="hero__title" style={{
           color: "#4B006E",
           textShadow: "5px 5px 1px #FFF000",
+          fontFamily: "Brda",
+          fontSize: "100px",
+          fontWeight: "bold",
+          fontStyle: "italic",
         }}>{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className={styles.tagline}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Download the Launcher
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/intro">
+            Get Started
           </Link>
         </div>
       </div>
@@ -36,9 +46,9 @@ export default function Home() {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
+      {/* <main>
         <HomepageFeatures />
-      </main>
+      </main> */}
     </Layout>
   );
 }

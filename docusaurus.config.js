@@ -62,12 +62,17 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: '/docs/category/api-docs', 
             position: 'left',
-            label: 'Tutorial',
+            label: 'Auth API',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/docs/category/proxy', 
+            label: 'Server Proxy', 
+            position: 'left'
+          },
+
+
           {
             href: 'https://github.com/Ipmake/kocitylauncher',
             label: 'Github',
