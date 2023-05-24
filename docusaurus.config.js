@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Knockout City Launcher',
   tagline: 'The documentation for the unofficial knockout city launcher',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.png',
 
   // Set the production url of your site here
   url: 'https://docs.ipmake.me',
@@ -36,15 +36,11 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -62,7 +58,7 @@ const config = {
         title: 'Knockout City Docs',
         logo: {
           alt: 'KOCITY',
-          src: 'img/logo.svg',
+          src: 'img/icon.png',
         },
         items: [
           {
@@ -74,7 +70,7 @@ const config = {
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/Ipmake/kocitylauncher',
-            label: 'Launcher',
+            label: 'Github',
             position: 'right',
           },
         ],
