@@ -8,11 +8,11 @@ POST /auth/register/:code
 
 | Variable | Description |
 | -------- | -------- |
-| :code    | The 6 digit login code that gets generated when authenticating with discord [here](https://kocity.ipmake.me/web/discord) |
+| :code    | The 6 digit login code that gets generated when authenticating with discord [here](https://api.kocity.xyz/web/discord) |
 
 ## Description
 
-This endpoint is used to define a username for a user, using the 6 digit pin to identify the user. The 6 digit pin is generated when authenticating with discord [here](https://kocity.ipmake.me/web/discord).
+This endpoint is used to define a username for a user, using the 6 digit pin to identify the user. The 6 digit pin is generated when authenticating with discord [here](https://api.kocity.xyz/web/discord).
 
 The 6 digit pin is only valid for 3 hours after being generated.
 

@@ -6,4 +6,4 @@ Connecting to the endpoint is pretty straight forward. The endpoint runs on mult
 
 ## URL
 
-The main URL for the endpoint is `https://kocity.ipmake.me`. This is the base URL for all the endpoints.
+The main URL for the endpoint is `https://api.kocity.xyz`. This is the base URL for all the endpoints.
