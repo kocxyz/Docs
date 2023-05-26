@@ -31,3 +31,10 @@
   --ifm-color-primary-lightest: #7d41ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+@font-face {
+  font-family: "Brda";
+  src: url("../../static/fonts/Brda/BrdaCom-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
