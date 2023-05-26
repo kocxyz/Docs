@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/icon.png',
 
   // Set the production url of your site here
-  url: 'https://docs.ipmake.me',
+  url: 'https://kocity.xyz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -54,8 +54,13 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       navbar: {
-        title: 'Knockout City Docs',
+        title: 'KOCityLauncher',
         logo: {
           alt: 'KOCITY',
           src: 'img/icon.png',
@@ -65,11 +70,6 @@ const config = {
             to: '/docs/category/api-docs', 
             position: 'left',
             label: 'Auth API',
-          },
-          {
-            to: '/docs/category/proxy', 
-            label: 'Server Proxy', 
-            position: 'left'
           },
 
 
@@ -81,7 +81,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
             title: 'Github',

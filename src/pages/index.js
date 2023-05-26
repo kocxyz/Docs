@@ -25,7 +25,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
+            href="https://github.com/Ipmake/kocitylauncher">
             Download the Launcher
           </Link>
           <Link
@@ -43,12 +43,12 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Welcome to Knockout City`}
+      description="The documentation for the unofficial Knockout City Launcher">
       <HomepageHeader />
-      {/* <main>
+      <main>
         <HomepageFeatures />
-      </main> */}
+      </main>
     </Layout>
   );
 }

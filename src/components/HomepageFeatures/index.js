@@ -1,62 +1,16 @@
 import React from 'react';
-import clsx from 'clsx';
 import styles from './styles.module.css';
-
-const FeatureList = [
-  {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
-
-function Feature({Svg, title, description}) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        <div className={styles.row}>
+          <h2> Welcome to Knockout City </h2>
+          <p> Knockout City is a bustling metropolis filled with excitement and adventure. Whether you're a seasoned fighter or a newcomer to the game, there's something for everyone in this city. From the neon lights of the downtown district to the quiet streets of the suburbs, Knockout City has it all. So come on in, make yourself at home, and get ready to experience the thrill of the fight! </p>
+          <div className={styles.img}>
+            <img src="https://cdn.discordapp.com/attachments/798935892059488276/1102977194805964800/image.png" />
+          </div>
         </div>
       </div>
     </section>

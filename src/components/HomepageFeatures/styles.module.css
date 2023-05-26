@@ -9,3 +9,16 @@
   height: 200px;
   width: 200px;
 }
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.img {
+  border-radius: 8px;
+}
