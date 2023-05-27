@@ -34,16 +34,18 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       }),
     ],
@@ -60,7 +62,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'KOCityLauncher',
+        title: 'KoCity',
         logo: {
           alt: 'KOCITY',
           src: 'img/icon.png',
@@ -69,7 +71,12 @@ const config = {
           {
             to: '/docs/category/api-docs', 
             position: 'left',
-            label: 'Auth API',
+            label: 'Auth',
+          },
+          {
+            to: '/docs/category/proxy-docs',
+            position: 'left',
+            label: 'Proxy',
           },
 
 
