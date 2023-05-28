@@ -27,6 +27,14 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        indexDocs: true,
+      },
+    ],
+  ],
   presets: [
     [
       'classic',

@@ -10,7 +10,11 @@ The KoCity Proxy is a simple proxy server that adds an aditional layer of authen
 
 ## How does it work?
 
-The proxy works by intercepting the login request and checking if the authtoken is valid. If it is, it will forward the request to the Knockout City server. If it is not, it will cancel the request and return an error. 
+The proxy works by intercepting the login request and checking if the authkey is valid. If it is, it will forward the request to the Knockout City server. If it is not, it will cancel the request and return an error. 
+
+**Note: Whem the launcher has a server defined with authentication, it will send the authkey as the username flag.**
+
+The Proxy replaces the username of the user with the actual username once the authkey is validated. This means that the Knockout City server will receive the actual username of the user, while the proxy will only receive the authkey.
 
 Tho, the Proxy server does not work by itself. It needs access to the [Auth API](/docs/category/api-docs) to check if the authtoken is valid, and store users in a centralized database. We recommend just using the official [Auth API](/docs/category/api-docs) for this, but you can also use your own, once the source code is released. You will need to change the used auth server in the launcher tho.
 
@@ -18,4 +22,4 @@ Tho, the Proxy server does not work by itself. It needs access to the [Auth API]
 
 By default, the knockout city server does not authenticate. It just asigns users by username and the username is freely defined when starting knockout city. This means that anyone can just use your username and play with your account. 
 
-The proxy server prevents this by checking if the authtoken is valid. This means that only you can play with your account, as long as you are using the [launcher](https://github.com/Ipmake/kocitylauncher).
+The proxy server prevents this by checking the user with an authkey. This means that only you can play with your account, as long as you are using the [launcher](https://github.com/Ipmake/kocitylauncher).

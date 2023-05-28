@@ -11,7 +11,7 @@ The launcher will only try to auth with the proxy when the server is registered 
 
 - [Node.js](https://nodejs.org/en/) (Latest LTS version)
 - [Git](https://git-scm.com/downloads)
-- [A KoCity server](/docs/category/server)
+- A KoCity server (Guide coming soon)
 
 ## Preparing 
 

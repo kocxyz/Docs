@@ -12,15 +12,7 @@ This endpoint will fetch the public server list from the database and return it 
 
 The server list includes properties like the name and ip of a server. 
 
-## Responses
-
-| Code | Situations |
-| -------- | -------- |
-| [200](#200) | Success, the endpoint will respond with JSON |
-
-***
-
-### 200
+## Response
 
 ```json
 [

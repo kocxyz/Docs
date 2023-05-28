@@ -3,7 +3,7 @@ toc_max_heading_level: 5
 ---
 
 ```
-POST /auth/reauth
+POST /auth/validate
 ```
 
 ## Description
@@ -19,28 +19,18 @@ The body of the request should be JSON, and should contain the following:
 | Variable | Description |
 | -------- | -------- |
 | username | The username of the user |
-| authToken | The auth token to validate |
+| authkey  | The temporary authkey or session key that is requested by the launcher |
 
 ### Example
 
 ```json
 {
     "username": "Users_Username",
-    "authToken": "Users_Auth_Token"
+    "authkey": "A_Temporary_Auth_Key"
 }
 ```
 
-## Responses
-
-| Code | Situations |
-| -------- | -------- |
-| [200](#200) | Success, the endpoint will respond with JSON |
-| 400  | No auth token was provided / The user does not exist |
-| 401  | The auth token provided was invalid |
-
-***
-
-### 200
+## Response
 
 ```json
 {

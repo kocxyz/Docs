@@ -3,12 +3,8 @@ toc_max_heading_level: 5
 ---
 
 ```
-POST /auth/register/:code
+POST /auth/register/
 ```
-
-| Variable | Description |
-| -------- | -------- |
-| :code    | The 6 digit login code that gets generated when authenticating with discord [here](https://api.kocity.xyz/web/discord) |
 
 ## Description
 
@@ -23,27 +19,18 @@ The body of the request should be JSON, and should contain the following:
 | Variable | Description |
 | -------- | -------- |
 | username | The username to set for the user |
+| code     | The 6 digit pin generated when authenticating with discord |
 
 ### Example
 
 ```json
 {
-    "username": "Users_Username"
+    "username": "Users_Username",
+    "code": "669496"
 }
 ```
 
-## Responses
-
-| Code | Situations |
-| -------- | -------- |
-| [200](#200) | Success, the endpoint will respond with JSON |
-| 400  | No 6 digit pin was provided / The username was invalid |
-| 401  | The 6 digit pin provided was invalid |
-| 500  | An internal server error occured |
-
-***
-
-### 200
+## Response
 
 ```json
 {
