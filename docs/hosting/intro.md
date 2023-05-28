@@ -46,6 +46,7 @@ proxy:
 
     # Dont change these
     EXTERNAL_PORT: 23600
+    INTERNAL_HOST: server
     INTERNAL_PORT: 23500
 
   ports:
