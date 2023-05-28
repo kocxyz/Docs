@@ -35,7 +35,7 @@ Firstly we need to include the Authentication Proxy as a service by adding the f
 
 ```yaml
 proxy:
-  image: ghcr.io/Ipmake/kocity-proxy
+  image: ghcr.io/ipmake/kocity-proxy
   container_name: koc-proxy
 
   environment:
