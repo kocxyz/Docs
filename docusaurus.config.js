@@ -125,7 +125,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Build with ❤️ by Ipmake. For the community 💪`,
+        copyright: `Build with ❤️ by the community 💪`,
       },
       prism: {
         theme: lightCodeTheme,
