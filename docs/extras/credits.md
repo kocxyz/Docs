@@ -19,6 +19,10 @@ You all are awesome and are really fun and helpful to work with. I'm glad to hav
 - **Dentora**#8591
 - **luke**#1706
 
+## Testers
+
+- [**Kampfkeil3r**](https://github.com/Kampfkeil3r)
+
 ## Special Thanks
 
 - [**Velan Studios**](https://www.velanstudios.com/)
