@@ -42,6 +42,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/Ipmake/kocitydocs/tree/master/',
         },
         blog: {
           showReadingTime: true,
@@ -89,6 +90,11 @@ const config = {
 
 
           {
+            href: 'https://discord.gg/4kNPb4cRxN',
+            label: 'Discord',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/Ipmake/kocitylauncher',
             label: 'Github',
             position: 'right',
@@ -105,6 +111,14 @@ const config = {
                 label: 'Launcher',
                 href: 'https://github.com/Ipmake/kocitylauncher',
               },
+              {
+                label: 'Proxy',
+                href: 'https://github.com/Ipmake/KOCity-Proxy',
+              },
+              {
+                label: 'KoCity Docker',
+                href: 'https://github.com/Tandashi/knockoutcity-server-docker/pkgs/container/knockoutcity-server-docker',
+              }
             ],
           },
           {
@@ -112,6 +126,10 @@ const config = {
             items: [
               {
                 label: 'Discord',
+                href: 'https://discord.gg/4kNPb4cRxN',
+              },
+              {
+                label: 'KoCity Discord',
                 href: 'https://discord.gg/knockoutcity',
               },
               {
@@ -119,7 +137,16 @@ const config = {
                 href: 'https://www.knockoutcity.com/',
               }
             ],
-          }
+          },
+          {
+            title: 'Extras',
+            items: [
+              {
+                label: 'Credits',
+                to: '/docs/extras/credits',
+              },
+            ],
+          },
         ],
         copyright: `Build with ❤️ by Ipmake. For the community 💪`,
       },
