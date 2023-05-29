@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkocitydocs=self.webpackChunkkocitydocs||[]).push([[52],{5866:o=>{o.exports=JSON.parse('{"title":"API docs","slug":"/category/api-docs","permalink":"/docs/category/api-docs","navigation":{"previous":{"title":"Introduction","permalink":"/docs/intro"},"next":{"title":"API Intro","permalink":"/docs/API/intro"}}}')}}]);

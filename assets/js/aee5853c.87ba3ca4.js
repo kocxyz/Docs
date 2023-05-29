@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkocitydocs=self.webpackChunkkocitydocs||[]).push([[237],{9623:o=>{o.exports=JSON.parse('{"title":"Proxy docs","slug":"/category/proxy-docs","permalink":"/docs/category/proxy-docs","navigation":{"previous":{"title":"discord","permalink":"/docs/API/web/discord"},"next":{"title":"Introduction","permalink":"/docs/proxy/intro"}}}')}}]);
