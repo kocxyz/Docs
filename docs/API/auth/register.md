@@ -10,7 +10,7 @@ POST /auth/register/
 
 This endpoint is used to define a username for a user, using the 6 digit pin to identify the user. The 6 digit pin is generated when authenticating with discord [here](https://api.kocity.xyz/web/discord).
 
-The 6 digit pin is only valid for 3 hours after being generated.
+The 6 digit pin is only valid for 10 minutes after being generated.
 
 ## Body
 

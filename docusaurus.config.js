@@ -15,6 +15,11 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  trailingSlash: false,
+
+  organizationName: 'Ipmake', // Usually your GitHub org/user name.
+  projectName: 'kocitydocs', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -42,6 +47,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/Ipmake/kocitydocs/tree/master/',
         },
         blog: {
           showReadingTime: true,
@@ -93,6 +99,11 @@ const config = {
           },
 
           {
+            href: 'https://discord.gg/4kNPb4cRxN',
+            label: 'Discord',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/Ipmake/kocitylauncher',
             label: 'Github',
             position: 'right',
@@ -109,6 +120,14 @@ const config = {
                 label: 'Launcher',
                 href: 'https://github.com/Ipmake/kocitylauncher',
               },
+              {
+                label: 'Proxy',
+                href: 'https://github.com/Ipmake/KOCity-Proxy',
+              },
+              {
+                label: 'KoCity Docker',
+                href: 'https://github.com/Tandashi/knockoutcity-server-docker/pkgs/container/knockoutcity-server-docker',
+              }
             ],
           },
           {
@@ -116,11 +135,24 @@ const config = {
             items: [
               {
                 label: 'Discord',
+                href: 'https://discord.gg/4kNPb4cRxN',
+              },
+              {
+                label: 'KoCity Discord',
                 href: 'https://discord.gg/knockoutcity',
               },
               {
                 label: 'Website',
                 href: 'https://www.knockoutcity.com/',
+              },
+            ],
+          },
+          {
+            title: 'Extras',
+            items: [
+              {
+                label: 'Credits',
+                to: '/docs/extras/credits',
               },
             ],
           },
