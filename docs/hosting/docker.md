@@ -2,18 +2,16 @@
 sidebar_position: 1
 ---
 
-# Introduction
-
-## Docker
+# Docker
 
 Using docker is probably the easiest version to host a private server. Especially when running Linux.
 This section will show you how to host the entire infrastructure using [docker](https://www.docker.com/) and [docker compose](https://docs.docker.com/compose/install/).
 
-### Prequisite
+## Prequisite
 
 - [docker](https://www.docker.com/) (`any version that supports compose v2`)
 
-### Running the Infrastructure using Docker Compose
+## Running the Infrastructure using Docker Compose
 
 To run the private server infrastructure using docker compose you can use the one [here](https://github.com/Tandashi/knockoutcity-server-docker/blob/main/compose.yaml).
 This compose file includes all the services needed to host a private server.
@@ -30,6 +28,8 @@ Currently the [`knockout-city-docker`](https://github.com/Tandashi/knockoutcity-
 
 :::
 
+
+### Authentication Proxy
 To include the Authenication Proxy into the Infrastructure the `compose.yaml` has to be extended and the services reconfigured.
 Firstly we need to include the Authentication Proxy as a service by adding the following under the `services` section:
 
@@ -77,6 +77,6 @@ server:
   ...
 ```
 
-### Running a Private Server without Docker Compose
+## Running a Private Server without Docker Compose
 
 Detailed information about the `knockout-city-docker` image can be found [here](https://github.com/Tandashi/knockoutcity-server-docker/).
