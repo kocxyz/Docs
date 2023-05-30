@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkocitydocs=self.webpackChunkkocitydocs||[]).push([[573],{2072:t=>{t.exports=JSON.parse('{"title":"Hosting","slug":"/category/hosting","permalink":"/docs/category/hosting","navigation":{"previous":{"title":"status","permalink":"/docs/proxy/API/stats/status"},"next":{"title":"Docker","permalink":"/docs/hosting/docker"}}}')}}]);
