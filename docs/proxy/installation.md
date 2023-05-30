@@ -4,8 +4,9 @@ sidebar_position: 2
 
 # Installation
 
-**NOTE:**
+:::note
 The launcher will only try to auth with the proxy when the server is registered as a public server. You cannot use the proxy with a private server yet.
+:::
 
 ## Requirements
 
