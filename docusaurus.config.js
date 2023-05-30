@@ -34,7 +34,7 @@ const config = {
 
   plugins: [
     [
-      require.resolve("@cmfcmf/docusaurus-search-local"),
+      require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         indexDocs: true,
       },
@@ -83,7 +83,7 @@ const config = {
         },
         items: [
           {
-            to: '/docs/category/api-docs', 
+            to: '/docs/category/api-docs',
             position: 'left',
             label: 'Auth',
           },
@@ -92,7 +92,11 @@ const config = {
             position: 'left',
             label: 'Proxy',
           },
-
+          {
+            to: '/docs/category/hosting',
+            position: 'left',
+            label: 'Hosting',
+          },
 
           {
             href: 'https://discord.gg/4kNPb4cRxN',
@@ -107,7 +111,7 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
           {
             title: 'Github',
@@ -140,7 +144,7 @@ const config = {
               {
                 label: 'Website',
                 href: 'https://www.knockoutcity.com/',
-              }
+              },
             ],
           },
           {
@@ -153,7 +157,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Build with ❤️ by Ipmake. For the community 💪`,
+        copyright: `Build with ❤️ by the community 💪`,
       },
       prism: {
         theme: lightCodeTheme,
