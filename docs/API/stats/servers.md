@@ -21,6 +21,12 @@ The server list includes properties like the name and ip of a server.
         "name": "test",
         "ip": "127.0.0.1:23600",
         "region": "EU"
-    }
+    },
+    {
+        "status": "online",
+        "name": "test1",
+        "ip": "192.168.178.2:23600",
+        "region": "NA"
+    },
 ]
 ```
