@@ -24,7 +24,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            href="https://github.com/Ipmake/kocitylauncher">
+            href="https://github.com/Ipmake/kocitylauncher/releases/latest">
             Download the Launcher
           </Link>
           <Link
