@@ -18,6 +18,7 @@ You all are awesome and are really fun and helpful to work with. I'm glad to hav
 - [**Alex G.**](https://hosmatic.com)
 - **Dentora**#8591
 - **luke**#1706
+- **Gorndt**#5535
 
 ## Special Thanks
 
