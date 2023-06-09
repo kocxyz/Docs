@@ -12,14 +12,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title" style={{
-          color: "#4B006E",
-          textShadow: "5px 5px 1px #FFF000",
-          fontFamily: "Brda",
-          fontSize: "100px",
-          fontWeight: "bold",
-          fontStyle: "italic",
-        }}>{siteConfig.title}</h1>
+        <h1 className={styles.title}>
+          The
+          <br/>
+          Unofficial
+          <br/>
+
+          {siteConfig.title}</h1>
         <p className={styles.tagline}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link

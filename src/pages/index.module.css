@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 35vh 0;
+  padding: 25vh 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -15,6 +15,12 @@
   background-attachment: fixed;
 }
 
+.title {
+  color: #4B006E;
+  text-shadow: 5px 5px 1px #FFF000;
+  font-size: 100px
+}
+
 .tagline {
   font-size: 1.2rem;
   font-weight: 700;
@@ -23,15 +29,25 @@
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   gap: 1rem;
+}
+
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }  
 }
