@@ -77,7 +77,7 @@ export const Widget = () => {
         <tbody>
           {serverListResult.status === "ok" ? (
             serverListResult.servers.map((server: Server) => (
-              <Server server={server} />
+              <Server key={server.id} server={server} />
             ))
           ) : (
             <tr>
