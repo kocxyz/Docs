@@ -62,7 +62,7 @@ export const Widget = () => {
         onClick={refresh}
       >
         <svg>
-          <use href="/img/refresh.svg#refresh"/>
+          <use href="/img/refresh.svg#refresh" />
         </svg>
       </button>
       <table className={styles.table}>
@@ -76,18 +76,23 @@ export const Widget = () => {
           </tr>
         </thead>
         <tbody>
-          {serverListResult.status === "ok"
-            ? serverListResult.servers.map((server: Server) => (
-                <Server server={server} />
-              ))
-            : null}
+          {serverListResult.status === "ok" ? (
+            serverListResult.servers.map((server: Server) => (
+              <Server server={server} />
+            ))
+          ) : (
+            <tr>
+              <td colSpan={5} className={styles.message}>
+                {serverListResult.status === "loading" ? (
+                  <>Loading...</>
+                ) : serverListResult.status === "error" ? (
+                  <>Couldn't load servers.</>
+                ) : null}
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
-      {serverListResult.status === "loading" ? (
-        <div className={styles.message}>"Loading..."</div>
-      ) : serverListResult.status === "error" ? (
-        <div className={styles.message}>"Something went wrong."</div>
-      ) : null}
     </div>
   );
 };
@@ -100,10 +105,12 @@ const Server = ({ server }: { server: Server }) => {
         {server.status === "online" ? "🟢" : "⚠️"}
       </td>
       <td className={styles.region}>
-        {server.region}{location && ` (${location})`}
+        {server.region}
+        {location && ` (${location})`}
       </td>
       <td className={styles.name}>
-        {server.name}{longName && ` (${longName})`}
+        {server.name}
+        {longName && ` (${longName})`}
       </td>
       <td className={styles.players}>
         {`${padPlayers(server.players)} / ${padPlayers(server.maxplayers)}`}
@@ -116,7 +123,7 @@ const Server = ({ server }: { server: Server }) => {
 };
 
 const padPlayers = (players: number): string =>
-  String(players).padStart(3, /* figure space */ " ")
+  String(players).padStart(3, /* figure space */ " ");
 
 const useServerListResult = (): [ServerListResult, () => void] => {
   const [result, setResult] = useState<ServerListResult>({ status: "loading" });

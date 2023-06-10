@@ -43,11 +43,12 @@
   text-align: center;
 }
 
-.region {
-  border-radius: 3px;
-}
-
 .players {
   font-variant-numeric: tabular-nums;
   text-align: left;
+}
+
+.message {
+  padding: 1rem;
+  width: 600px;
 }
