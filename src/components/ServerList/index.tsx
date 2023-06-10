@@ -43,11 +43,13 @@ export const ServerList = () => {
 };
 
 const Server = ({ server }: { server: Server }) => (
-  <li>
-    {server.status === "online" ? "green circle title online" : "! offline"}
+  <li className={styles.server}>
+    <div title={server.status}>{server.status === "online" ? "🟢" : "⚠️"}</div>
+    <div className={styles.region}>{server.region}</div>
     {server.name}
-    {server.region}
-    {`${server.players} / ${server.maxplayers}`}
+    <div className={styles.players}>
+      {`${server.players} / ${server.maxplayers}`}
+    </div>
   </li>
 );
 

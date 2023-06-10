@@ -1,0 +1,9 @@
+.server {
+  display: flex;
+  gap: .5rem;
+  border-bottom: 1px solid black;
+}
+
+.region {
+  border-radius: 3px;
+}
