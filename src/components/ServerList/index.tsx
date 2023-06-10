@@ -44,7 +44,7 @@ export const ServerList = () => (
   <section className={styles.section}>
     <h2>Public Servers</h2>
     <p>
-      These are the community hosted servers you can access through the Launcher
+      These are the community hosted servers you can access through the launcher.
     </p>
     <Widget />
   </section>
