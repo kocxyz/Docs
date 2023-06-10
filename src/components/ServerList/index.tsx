@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
+// const serversApi = "https://api.kocity.xyz/stats/servers";
+const serversApi = "/servers.json";
+
 interface Server {
   id: number | string;
   status: "online" | string;
@@ -39,13 +42,14 @@ export const ServerList = () => {
   );
 };
 
-const Server = ({ server }: { server: Server }) =>
+const Server = ({ server }: { server: Server }) => (
   <li>
     {server.status === "online" ? "green circle title online" : "! offline"}
     {server.name}
     {server.region}
-    {`${server.players/server.maxplayers}`}
+    {`${server.players} / ${server.maxplayers}`}
   </li>
+);
 
 const useServerListResult = (): [ServerListResult, () => void] => {
   const [result, setResult] = useState<ServerListResult>({ status: "loading" });
@@ -63,7 +67,7 @@ const useServerListResult = (): [ServerListResult, () => void] => {
 
 const fetchServerList = async (): Promise<ServerListResult> => {
   try {
-    const response = await fetch("https://api.kocity.xyz/stats/servers");
+    const response = await fetch(serversApi);
     const json = (await response.json()) as unknown;
     if (!isServerList(json)) {
       console.error("couldn't parse server list. got: ", json);
