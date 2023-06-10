@@ -56,11 +56,14 @@ export const Widget = () => {
   return (
     <div className={styles.widget}>
       <button
+        title="refresh"
         className={styles.refresh}
         disabled={serverListResult.status === "loading"}
         onClick={refresh}
       >
-        Refresh
+        <svg>
+          <use href="/img/refresh.svg#refresh"/>
+        </svg>
       </button>
       <table className={styles.table}>
         <thead>

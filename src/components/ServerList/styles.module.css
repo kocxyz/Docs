@@ -15,6 +15,24 @@
 
 .refresh {
   align-self: flex-end;
+  border: none;
+  background: none;
+}
+.refresh svg {
+  width: 30px;
+  height: 30px;
+}
+.refresh svg use {
+  fill: black;
+}
+.refresh:hover svg use {
+  fill: #555;
+}
+[data-theme="dark"] .refresh svg use {
+  fill: white;
+}
+[data-theme="dark"] .refresh:hover svg use {
+  fill: #aaa;
 }
 
 .server {
