@@ -6,15 +6,17 @@ const serversApi = "/servers.json";
 
 const extraData: {
   [name: string]: {
+    longName?: string;
     location?: string;
     link?: string;
     linkText?: string;
   };
 } = {
   TCNS: {
+    longName: "The City Never Sleeps",
     location: "Chicago",
     link: "https://discord.gg/FdvGezR3YY",
-    linkText: "TCNS Discord",
+    linkText: "Discord",
   },
   DummyCorps: {
     location: "Southeast US",
@@ -88,19 +90,20 @@ export const Widget = () => {
 };
 
 const Server = ({ server }: { server: Server }) => {
-  const { location, link, linkText } = extraData[server.name] ?? {};
+  const { longName, location, link, linkText } = extraData[server.name] ?? {};
   return (
     <tr className={styles.server}>
       <td className={styles.status} title={server.status}>
         {server.status === "online" ? "🟢" : "⚠️"}
       </td>
       <td className={styles.region}>
-        {server.region}
-        {location ? ` (${location})` : null}
+        {server.region}{location && ` (${location})`}
       </td>
-      <td className={styles.name}>{server.name}</td>
+      <td className={styles.name}>
+        {server.name}{longName && ` (${longName})`}
+      </td>
       <td className={styles.players}>
-        {`${String(server.players).padStart(3, /* figure space */ " ")} / ${String(server.maxplayers).padStart(3, /* figure space */ " ")}`}
+        {`${padPlayers(server.players)} / ${padPlayers(server.maxplayers)}`}
       </td>
       <td className={styles.link}>
         {link ? <a href={link}>{linkText ?? link}</a> : null}
@@ -108,6 +111,9 @@ const Server = ({ server }: { server: Server }) => {
     </tr>
   );
 };
+
+const padPlayers = (players: number): string =>
+  String(players).padStart(3, /* figure space */ " ")
 
 const useServerListResult = (): [ServerListResult, () => void] => {
   const [result, setResult] = useState<ServerListResult>({ status: "loading" });
