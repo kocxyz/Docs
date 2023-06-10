@@ -146,7 +146,6 @@ const fetchServerList = async (): Promise<ServerListResult> => {
       console.error("couldn't parse server list. got: ", json);
       return { status: "error" };
     }
-    // should do more validation, but it's easier to assume the shape and check when using it later.
     return { status: "ok", servers: json };
   } catch (e) {
     console.error(e);

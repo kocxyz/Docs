@@ -36,7 +36,7 @@
 }
 
 .server {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .status {
@@ -45,7 +45,6 @@
 
 .players {
   font-variant-numeric: tabular-nums;
-  text-align: left;
 }
 
 .message {
