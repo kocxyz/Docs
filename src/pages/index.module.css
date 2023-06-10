@@ -40,8 +40,6 @@
 .button {
   composes: button from global;
   composes: button--lg from global;
-  display: flex;
-  align-items: center;
   height: 3rem;
 }
 
@@ -61,21 +59,6 @@
 }
 .buttonInstructions:hover {
   color: #7d41ff;
-}
-
-.buttonDiscord {
-  composes: button;
-  background-color: #2c2f33;
-  color: white;
-}
-.buttonDiscord:hover {
-  background-color: #646A73;
-}
-
-.discordLogo {
-  fill: white;
-  height: 100%;
-  margin-right: 1rem;
 }
 
 @media screen and (max-width: 996px) {

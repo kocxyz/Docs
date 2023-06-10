@@ -31,13 +31,6 @@ function HomepageHeader() {
           >
             Instructions and information
           </Link>
-          <Link
-            className={styles.buttonDiscord}
-            href="https://discord.gg/4kNPb4cRxN"
-          >
-            <img className={styles.discordLogo} src="/img/discord-logo.svg" alt=""/>
-            Join our Discord
-          </Link>
         </div>
       </div>
     </header>
