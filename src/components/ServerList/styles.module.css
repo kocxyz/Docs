@@ -1,9 +1,35 @@
-.server {
+.section {
+  composes: container from global;
+  margin-top: 2rem;
   display: flex;
-  gap: .5rem;
-  border-bottom: 1px solid black;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.refresh {
+  align-self: flex-end;
+}
+
+.server {
+  padding: .5rem;
+}
+
+.status {
+  text-align: center;
 }
 
 .region {
   border-radius: 3px;
+}
+
+.players {
+  font-variant-numeric: tabular-nums;
+  text-align: left;
 }

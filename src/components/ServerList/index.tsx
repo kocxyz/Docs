@@ -4,6 +4,28 @@ import styles from "./styles.module.css";
 // const serversApi = "https://api.kocity.xyz/stats/servers";
 const serversApi = "/servers.json";
 
+const extraData: {
+  [name: string]: {
+    location?: string;
+    link?: string;
+    linkText?: string;
+  };
+} = {
+  TCNS: {
+    location: "Chicago",
+    link: "https://discord.gg/FdvGezR3YY",
+    linkText: "TCNS Discord",
+  },
+  DummyCorps: {
+    location: "Southeast US",
+    link: "https://koc.dummycorps.net/",
+    linkText: "Website",
+  },
+  "KO-NA-West": {
+    location: "Vancouver",
+  },
+};
+
 interface Server {
   id: number | string;
   status: "online" | string;
@@ -17,41 +39,75 @@ type ServerListResult =
   | { status: "ok"; servers: Server[] }
   | { status: "error" };
 
-export const ServerList = () => {
+export const ServerList = () => (
+  <section className={styles.section}>
+    <h2>Public Servers</h2>
+    <p>
+      These are the community hosted servers you can access through the Launcher
+    </p>
+    <Widget />
+  </section>
+);
+
+export const Widget = () => {
   const [serverListResult, refresh] = useServerListResult();
   return (
-    <section>
-      <h2>Public Servers</h2>
-      <p>
-        These are the community hosted servers you can access through the
-        Launcher
-      </p>
-      <button disabled={serverListResult.status === "loading"}>Refresh</button>
+    <div className={styles.widget}>
+      <button
+        className={styles.refresh}
+        disabled={serverListResult.status === "loading"}
+        onClick={refresh}
+      >
+        Refresh
+      </button>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Region</th>
+            <th>Name</th>
+            <th>Players (/ Max)</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {serverListResult.status === "ok"
+            ? serverListResult.servers.map((server: Server) => (
+                <Server server={server} />
+              ))
+            : null}
+        </tbody>
+      </table>
       {serverListResult.status === "loading" ? (
-        "Loading..."
+        <div className={styles.message}>"Loading..."</div>
       ) : serverListResult.status === "error" ? (
-        "Something went wrong."
-      ) : (
-        <ul>
-          {serverListResult.servers.map((server: Server) => (
-            <Server server={server} />
-          ))}
-        </ul>
-      )}
-    </section>
+        <div className={styles.message}>"Something went wrong."</div>
+      ) : null}
+    </div>
   );
 };
 
-const Server = ({ server }: { server: Server }) => (
-  <li className={styles.server}>
-    <div title={server.status}>{server.status === "online" ? "🟢" : "⚠️"}</div>
-    <div className={styles.region}>{server.region}</div>
-    {server.name}
-    <div className={styles.players}>
-      {`${server.players} / ${server.maxplayers}`}
-    </div>
-  </li>
-);
+const Server = ({ server }: { server: Server }) => {
+  const { location, link, linkText } = extraData[server.name] ?? {};
+  return (
+    <tr className={styles.server}>
+      <td className={styles.status} title={server.status}>
+        {server.status === "online" ? "🟢" : "⚠️"}
+      </td>
+      <td className={styles.region}>
+        {server.region}
+        {location ? ` (${location})` : null}
+      </td>
+      <td className={styles.name}>{server.name}</td>
+      <td className={styles.players}>
+        {`${String(server.players).padStart(3, /* figure space */ " ")} / ${String(server.maxplayers).padStart(3, /* figure space */ " ")}`}
+      </td>
+      <td className={styles.link}>
+        {link ? <a href={link}>{linkText ?? link}</a> : null}
+      </td>
+    </tr>
+  );
+};
 
 const useServerListResult = (): [ServerListResult, () => void] => {
   const [result, setResult] = useState<ServerListResult>({ status: "loading" });
