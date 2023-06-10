@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
-// const serversApi = "https://api.kocity.xyz/stats/servers";
-const serversApi = "/servers.json";
+const serversApi = "https://api.kocity.xyz/stats/servers";
 
 const extraData: {
   [name: string]: {
