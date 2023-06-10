@@ -13,23 +13,23 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className={styles.title}>
-          The
-          <br/>
-          Unofficial
-          <br/>
-
-          {siteConfig.title}</h1>
+          The Unofficial
+          <br />
+          {siteConfig.title}
+        </h1>
         <p className={styles.tagline}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
-            href="https://github.com/Ipmake/kocitylauncher/releases/latest">
+            className={styles.buttonDownload}
+            href="https://github.com/Ipmake/kocitylauncher/releases/latest"
+          >
             Download the Launcher
           </Link>
           <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Get Started
+            className={styles.buttonInstructions}
+            href="https://github.com/Ipmake/kocitylauncher#readme"
+          >
+            Instructions and information
           </Link>
         </div>
       </div>
