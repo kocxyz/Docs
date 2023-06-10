@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Knockout City Launcher',
-  tagline: "The easiest way to play Knockout City. Let's brawl!",
+  tagline: "Brawlin doesn't have to end. Join the community.",
   favicon: 'img/icon.png',
 
   // Set the production url of your site here
