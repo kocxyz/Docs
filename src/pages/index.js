@@ -21,13 +21,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className={styles.buttonDownload}
-            href="https://github.com/Ipmake/kocitylauncher/releases/latest"
+            href="https://github.com/Ipmake/kocitylauncher/releases/latest/download/KnockoutCityLauncher-Setup.exe"
           >
             Download the Launcher
           </Link>
           <Link
             className={styles.buttonInstructions}
-            href="https://github.com/Ipmake/kocitylauncher#readme"
+            href="https://github.com/Ipmake/kocitylauncher"
           >
             Instructions and information
           </Link>
