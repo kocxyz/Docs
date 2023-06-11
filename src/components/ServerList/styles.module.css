@@ -17,6 +17,7 @@
   align-self: flex-end;
   border: none;
   background: none;
+  cursor: pointer;
 }
 .refresh svg {
   width: 30px;
