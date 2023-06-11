@@ -1,0 +1,53 @@
+.section {
+  composes: container from global;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.refresh {
+  align-self: flex-end;
+  border: none;
+  background: none;
+}
+.refresh svg {
+  width: 30px;
+  height: 30px;
+}
+.refresh svg use {
+  fill: black;
+}
+.refresh:hover svg use {
+  fill: #555;
+}
+[data-theme="dark"] .refresh svg use {
+  fill: white;
+}
+[data-theme="dark"] .refresh:hover svg use {
+  fill: #aaa;
+}
+
+.server {
+  padding: 0.5rem;
+}
+
+.status {
+  text-align: center;
+}
+
+.players {
+  font-variant-numeric: tabular-nums;
+}
+
+.message {
+  padding: 1rem;
+  width: 600px;
+}
