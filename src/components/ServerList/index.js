@@ -127,8 +127,7 @@ const padPlayers = (players) =>
  *  ]}
  */
 const useServerListResult = () => {
-  const [result, setResult] =
-    useState < ServerListResult > { status: "loading" };
+  const [result, setResult] = useState({ status: "loading" });
   useEffect(() => {
     fetchServerList().then(setResult);
   }, []);
