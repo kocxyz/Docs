@@ -3,14 +3,7 @@ import styles from "./styles.module.css";
 
 const serversApi = "https://api.kocity.xyz/stats/servers";
 
-const extraData: {
-  [name: string]: {
-    longName?: string;
-    location?: string;
-    link?: string;
-    linkText?: string;
-  };
-} = {
+const extraData = {
   TCNS: {
     longName: "The City Never Sleeps",
     location: "Chicago",
@@ -27,24 +20,23 @@ const extraData: {
   },
 };
 
-interface Server {
-  id: number | string;
-  status: "online" | string;
-  name: string;
-  region: "EU" | "NA" | string;
-  maxplayers: number;
-  players: number;
-}
-type ServerListResult =
-  | { status: "loading" }
-  | { status: "ok"; servers: Server[] }
-  | { status: "error" };
+/**
+ * @typedef {{
+ *   id: number | string;
+ *   status: "online" | string;
+ *   region: "EU" | "NA" | string;
+ *   name: string;
+ *   players: number;
+ *   maxplayers: number;
+ * }} Server
+ */
 
 export const ServerList = () => (
   <section className={styles.section}>
     <h2>Public Servers</h2>
     <p>
-      These are the community hosted servers you can access through the launcher.
+      These are the community hosted servers you can access through the
+      launcher.
     </p>
     <Widget />
   </section>
@@ -76,7 +68,7 @@ export const Widget = () => {
         </thead>
         <tbody>
           {serverListResult.status === "ok" ? (
-            serverListResult.servers.map((server: Server) => (
+            serverListResult.servers.map((server) => (
               <Server key={server.id} server={server} />
             ))
           ) : (
@@ -96,7 +88,7 @@ export const Widget = () => {
   );
 };
 
-const Server = ({ server }: { server: Server }) => {
+const Server = ({ server }) => {
   const { longName, location, link, linkText } = extraData[server.name] ?? {};
   return (
     <tr className={styles.server}>
@@ -121,11 +113,22 @@ const Server = ({ server }: { server: Server }) => {
   );
 };
 
-const padPlayers = (players: number): string =>
+const padPlayers = (players) =>
   String(players).padStart(3, /* figure space */ " ");
 
-const useServerListResult = (): [ServerListResult, () => void] => {
-  const [result, setResult] = useState<ServerListResult>({ status: "loading" });
+/**
+ * @returns {[
+ *   Promise<
+ *     | {status: "loading"}
+ *     | {status: "error"}
+ *     | {status: "ok", servers: Server[]}
+ *   >,
+ *   () => void
+ *  ]}
+ */
+const useServerListResult = () => {
+  const [result, setResult] =
+    useState < ServerListResult > { status: "loading" };
   useEffect(() => {
     fetchServerList().then(setResult);
   }, []);
@@ -138,10 +141,10 @@ const useServerListResult = (): [ServerListResult, () => void] => {
   return [result, refresh];
 };
 
-const fetchServerList = async (): Promise<ServerListResult> => {
+const fetchServerList = async () => {
   try {
     const response = await fetch(serversApi);
-    const json = (await response.json()) as unknown;
+    const json = await response.json();
     if (!isServerList(json)) {
       console.error("couldn't parse server list. got: ", json);
       return { status: "error" };
@@ -153,10 +156,9 @@ const fetchServerList = async (): Promise<ServerListResult> => {
   }
 };
 
-const isServerList = (json: unknown): json is Server[] =>
-  Array.isArray(json) && json.every(isServer);
+const isServerList = (json) => Array.isArray(json) && json.every(isServer);
 
-const isServer = (json: unknown): json is Server =>
+const isServer = (json) =>
   typeof json === "object" &&
   json !== null &&
   (typeof json["id"] === "string" || typeof json["id"] === "number") &&
