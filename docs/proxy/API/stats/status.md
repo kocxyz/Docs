@@ -8,9 +8,7 @@ GET /stats/status
 
 ## Description
 
-This endpoint just redirects the user to the discord authentication page.
-
-After authenticating with discord, the user will be redirected to a sucess page that displays the 6 digit pin that is used to authenticate with the API.
+This is an endpoint for the auth proxy that just returns some basic statistics of the proxy.
 
 ## Response
 
