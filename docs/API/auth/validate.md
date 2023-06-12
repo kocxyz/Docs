@@ -18,14 +18,14 @@ The body of the request should be JSON, and should contain the following:
 
 | Variable | Description |
 | -------- | -------- |
-| username | The username of the user |
+| server   | The server ip / domain. Has to match with what was provided for the authkey |
 | authkey  | The temporary authkey or session key that is requested by the launcher |
 
 ### Example
 
 ```json
 {
-    "username": "Users_Username",
+    "server": "someserver.com:23600",
     "authkey": "A_Temporary_Auth_Key"
 }
 ```
