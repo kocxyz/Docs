@@ -12,7 +12,9 @@ The KoCity Proxy is a simple proxy server that adds an aditional layer of authen
 
 The proxy works by intercepting the login request and checking if the authkey is valid. If it is, it will forward the request to the Knockout City server. If it is not, it will cancel the request and return an error. 
 
-**Note: Whem the launcher has a server defined with authentication, it will send the authkey as the username flag.**
+:::note
+Whem the launcher has a server defined with authentication, it will send the authkey as the username flag.
+:::
 
 The Proxy replaces the username of the user with the actual username once the authkey is validated. This means that the Knockout City server will receive the actual username of the user, while the proxy will only receive the authkey.
 
