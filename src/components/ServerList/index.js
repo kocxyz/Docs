@@ -27,7 +27,7 @@ const extraData = {
  *   region: "EU" | "NA" | string;
  *   name: string;
  *   players: number;
- *   maxplayers: number;
+ *   maxPlayers: number;
  * }} Server
  */
 
@@ -104,7 +104,7 @@ const Server = ({ server }) => {
         {longName && ` (${longName})`}
       </td>
       <td className={styles.players}>
-        {`${padPlayers(server.players)} / ${padPlayers(server.maxplayers)}`}
+        {`${padPlayers(server.players)} / ${padPlayers(server.maxPlayers)}`}
       </td>
       <td className={styles.link}>
         {link ? <a href={link}>{linkText ?? link}</a> : null}
@@ -164,5 +164,5 @@ const isServer = (json) =>
   typeof json["status"] === "string" &&
   typeof json["name"] === "string" &&
   typeof json["region"] === "string" &&
-  typeof json["maxplayers"] === "number" &&
+  typeof json["maxPlayers"] === "number" &&
   typeof json["players"] === "number";
