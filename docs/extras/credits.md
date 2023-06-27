@@ -12,6 +12,7 @@ You all are awesome and are really fun and helpful to work with. I'm glad to hav
 
 - [**Ipmake**](https://github.com/ipmake)
 - [**Tandashi**](https://github.com/Tandashi)
+- [**Skyqrose**](https://github.com/skyqrose)
 
 ## Server Hosters
 
