@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableCell,
+  TableRow,
+  Tooltip,
+} from "@mui/material";
 
 const serversApi = "https://api.kocity.xyz/stats/servers";
 
 const extraData = {
   TCNS: {
-    longName: "The City Never Sleeps",
     location: "Chicago",
     link: "https://discord.gg/FdvGezR3YY",
     linkText: "Discord",
@@ -17,7 +24,21 @@ const extraData = {
   },
   "KO-NA-West": {
     location: "Vancouver",
+    link: "https://discord.gg/DEJGhdw9rj",
+    linkText: "Discord",
   },
+  "Hos-DE-Cntr": {
+    location: "Germany",
+    link: "https://hosmatic.com",
+    linkText: "Website",
+  },
+  "HOS-SGP": {
+    link: "https://hosmatic.com",
+    linkText: "Website",
+  },
+  "KoCityDE": {
+    location: "Germany",
+  }
 };
 
 /**
@@ -56,34 +77,56 @@ export const Widget = () => {
           <use href="/img/refresh.svg#refresh" />
         </svg>
       </button>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Status</th>
-            <th>Region</th>
-            <th>Name</th>
-            <th>Players (/ Max)</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table
+        sx={{
+          tableLayout: "fixed",
+        }}
+      >
+        <TableHead
+          sx={{
+            backgroundColor: "#1f1f1f",
+          }}
+        >
+          <TableRow>
+            <TableCell align="left" sx={{
+              width: "2.5rem",
+            }}>Status</TableCell>
+            <TableCell sx={{
+              width: "10rem",
+            }}>Region</TableCell>
+            <TableCell sx={{
+              width: "10rem",
+            }}>Name</TableCell>
+            <TableCell sx={{
+              width: "5rem",
+            }}>Players (/ Max)</TableCell>
+            <TableCell sx={{
+              width: "5rem",
+            }}>Link</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody
+          sx={{
+            backgroundColor: "#2f2f2f",
+          }}
+        >
           {serverListResult.status === "ok" ? (
             serverListResult.servers.map((server) => (
               <Server key={server.id} server={server} />
             ))
           ) : (
-            <tr>
-              <td colSpan={5} className={styles.message}>
+            <TableRow>
+              <TableCell colSpan={5} className={styles.message}>
                 {serverListResult.status === "loading" ? (
                   <>Loading...</>
                 ) : serverListResult.status === "error" ? (
                   <>Couldn't load servers.</>
                 ) : null}
-              </td>
-            </tr>
+              </TableCell>
+            </TableRow>
           )}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 };
@@ -92,8 +135,14 @@ const Server = ({ server }) => {
   const { longName, location, link, linkText } = extraData[server.name] ?? {};
   return (
     <tr className={styles.server}>
-      <td className={styles.status} title={server.status}>
-        {server.status === "online" ? "🟢" : "⚠️"}
+      <td className={styles.status} style={{
+
+          cursor: "default",
+          userSelect: "none",
+        }}>
+        <Tooltip title={server.status}>
+          {server.status === "online" ? "🟢" : "🔴"}
+        </Tooltip>
       </td>
       <td className={styles.region}>
         {server.region}

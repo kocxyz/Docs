@@ -41,3 +41,7 @@
   font-weight: bold;
   font-style: italic;
 }
+
+.navbar{
+  z-index: 1000;
+}

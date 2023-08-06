@@ -52,3 +52,13 @@
   padding: 1rem;
   width: 600px;
 }
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}

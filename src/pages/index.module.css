@@ -18,7 +18,16 @@
 .title {
   color: #4B006E;
   text-shadow: 5px 5px 1px #FFF000;
-  font-size: 100px
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+}
+
+.subTitle {
+  font-size: 3rem;
 }
 
 .tagline {
@@ -41,24 +50,37 @@
   composes: button from global;
   composes: button--lg from global;
   height: 3rem;
+  color: #FFF000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .buttonDownload {
   composes: button;
   background-color: #4B006E;
-  color: #FFF000;
+  transition: all ease-in-out 0.2s;
 }
 .buttonDownload:hover {
-  background-color: #7d41ff;
+  border-radius: 10px;
+  color: #FFF000;
+  box-shadow: 7px 5px 0 #FFF000;
 }
 
 .buttonInstructions {
   composes: button;
-  color: #4B006E;
-  text-shadow: 2px 1px 1px #FFF000;
+  background-color: #4B006E;
+  transition: all ease-in-out 0.2s;
 }
 .buttonInstructions:hover {
-  color: #7d41ff;
+  border-radius: 10px;
+  color: #FFF000;
+  box-shadow: 7px 5px 0 #FFF000;
+}
+
+.fullScreen {
+  height: 100vh;
 }
 
 @media screen and (max-width: 996px) {
@@ -70,7 +92,15 @@
     font-size: 3rem;
   }
 
+  .subTitle {
+    font-size: 1.5rem;
+  }
+
   .buttons {
     flex-direction: column;
   }  
+
+  .fullScreen {
+    height: auto;
+  }
 }
