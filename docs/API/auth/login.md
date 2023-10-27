@@ -33,6 +33,18 @@ The body of the request should be JSON, and should contain the following:
 ```json
 {
     "username": "Users_Username",
-    "authToken": "Users_Auth_Token"
+    "authToken": "Users_Auth_Token",
+    "premium": 3,
+    "usernameColor": "#ff0000"
 }
 ```
+OR
+```json
+{
+    "username": "Users_Username",
+    "authToken": "Users_Auth_Token",
+    "premium": 0
+}
+```
+
+If the user does not have premium, the usernameColor is not sent    

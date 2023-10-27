@@ -35,6 +35,7 @@ The body of the request should be JSON, and should contain the following:
 ```json
 {
     "username": "Users_Username",
-    "authToken": "Users_Auth_Token"
+    "authToken": "Users_Auth_Token",
+    "premium": 0,
 }
 ```

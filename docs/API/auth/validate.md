@@ -16,17 +16,19 @@ This endpoint is especially important for the proxy sind of the koCity server, t
 
 The body of the request should be JSON, and should contain the following:
 
-| Variable | Description |
-| -------- | -------- |
-| server   | The server ip / domain. Has to match with what was provided for the authkey |
-| authkey  | The temporary authkey or session key that is requested by the launcher |
+| Variable | Type | Description |
+| -------- | -------- | -------- |
+| server   | String   | The server ip / domain. Has to match with what was provided for the authkey |
+| authkey  | String   | The temporary authkey or session key that is requested by the launcher |
+| keepKey  | Boolean?  | hether to keep the key and not invalidate it after authenticating |
 
 ### Example
 
 ```json
 {
     "server": "someserver.com:23600",
-    "authkey": "A_Temporary_Auth_Key"
+    "authkey": "A_Temporary_Auth_Key",
+    "keepKey": false
 }
 ```
 
@@ -34,6 +36,15 @@ The body of the request should be JSON, and should contain the following:
 
 ```json
 {
-    "username": "Users_Username"
+    "username": "Users_Username",
+    "color": "#ff0000",
+    "velanID": 00000000000
+}
+```
+OR
+```json
+{
+    "username": "Users_Username",
+    "color": null
 }
 ```
