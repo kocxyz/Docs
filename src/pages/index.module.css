@@ -1,0 +1,286 @@
+/**
+ * Gaming-themed homepage with sharp angles and neon effects
+ */
+
+.heroBanner {
+  padding: 25vh 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.9),
+      rgba(75, 0, 110, 0.3)
+    ),
+    url("@site/static/img/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  border-bottom: 3px solid #7d41ff;
+  box-shadow: 0 4px 20px rgba(125, 65, 255, 0.2);
+}
+
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(125, 65, 255, 0.05) 50%,
+    transparent 60%
+  );
+  animation: scanline 4s infinite;
+  pointer-events: none;
+}
+
+.heroBanner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      90deg,
+      transparent 48%,
+      rgba(125, 65, 255, 0.02) 49%,
+      rgba(125, 65, 255, 0.02) 51%,
+      transparent 52%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 48%,
+      rgba(125, 65, 255, 0.02) 49%,
+      rgba(125, 65, 255, 0.02) 51%,
+      transparent 52%
+    );
+  background-size: 50px 50px;
+  animation: matrix 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes matrix {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.title {
+  color: #7d41ff;
+  text-shadow: 0 0 5px #7d41ff, 0 0 10px #7d41ff, 3px 3px 0 #4b006e,
+    6px 6px 0 #fff000;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  font-family: "Brda", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 2;
+  animation: subtleGlow 3s infinite alternate;
+}
+
+@keyframes subtleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #7d41ff, 0 0 10px #7d41ff, 3px 3px 0 #4b006e,
+      6px 6px 0 #fff000;
+  }
+  50% {
+    text-shadow: 0 0 8px #7d41ff, 0 0 15px #7d41ff, 3px 3px 0 #4b006e,
+      6px 6px 0 #fff000;
+  }
+}
+
+.subTitle {
+  font-size: 3rem;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: subtleGlow 3s infinite alternate;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  height: 3.5rem;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 240, 0, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.buttonDownload {
+  background: #7d41ff;
+  box-shadow: 0 0 15px rgba(125, 65, 255, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: skew(-8deg);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff000;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.buttonDownload div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: skew(8deg);
+}
+
+.buttonDownload:hover {
+  box-shadow: 12px 8px rgba(255, 240, 0), 0 6px 20px rgba(0, 0, 0);
+  transform: skew(-8deg) translateY(-3px);
+}
+
+.fullScreen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Futuristic grid overlay */
+.heroBanner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+      rgba(125, 65, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(125, 65, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 25s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 2rem;
+    background-attachment: scroll;
+  }
+
+  .title {
+    font-size: 3rem;
+    text-shadow: 0 0 3px #7d41ff, 0 0 6px #7d41ff, 2px 2px 0 #4b006e,
+      4px 4px 0 #fff000;
+  }
+
+  .subTitle {
+    font-size: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .buttonDownload,
+  .buttonInstructions {
+    transform: none;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  .buttonDownload:hover,
+  .buttonInstructions:hover {
+    transform: translateY(-2px);
+  }
+
+  .fullScreen {
+    height: auto;
+    min-height: 100vh;
+  }
+}
