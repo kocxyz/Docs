@@ -90,8 +90,13 @@ body {
   color: #ffffff;
   font-family: system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
-  height: max-content !important;
+  height: 100vh;
   background-color: #000000;
+}
+
+#__docusaurus {
+  width: 100%;
+  height: 100%;
 }
 
 /* Gaming-styled scrollbar */
